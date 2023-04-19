@@ -29,36 +29,35 @@ public class Lutemon implements Serializable {
         this.id = idCounter++;
         storage = Storage.getInstance();
 
-        /// MUUTA ARVOT
         switch (color)  {
             case    "Pink":
-                this.attack = 0;
-                this.defence = 0;
-                this.maxHealth = 0;
+                this.attack = 7;
+                this.defence = 2;
+                this.maxHealth = 18;
                 this.image = 0;
                 break;
             case    "Black":
-                this.attack = 0;
+                this.attack = 9;
                 this.defence = 0;
-                this.maxHealth = 0;
+                this.maxHealth = 16;
                 this.image = 0;
                 break;
             case    "White":
-                this.attack = 0;
-                this.defence = 0;
-                this.maxHealth = 0;
+                this.attack = 5;
+                this.defence = 4;
+                this.maxHealth = 20;
                 this.image = 0;
                 break;
             case    "Green":
-                this.attack = 0;
-                this.defence = 0;
-                this.maxHealth = 0;
+                this.attack = 6;
+                this.defence = 3;
+                this.maxHealth = 19;
                 this.image = 0;
                 break;
             case    "Orange":
-                this.attack = 0;
-                this.defence = 0;
-                this.maxHealth = 0;
+                this.attack = 8;
+                this.defence = 1;
+                this.maxHealth = 17;
                 this.image = 0;
                 break;
             default:

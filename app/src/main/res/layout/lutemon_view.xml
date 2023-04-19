@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginTop="10dp"
+    android:background="#009688"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imgLutemon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nimi (Väri)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hyökkäys"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtDefence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puolustus"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elämä"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtExp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kokemus"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
