@@ -37,7 +37,8 @@ public class MoveLutemonsActivity extends AppCompatActivity {
             lutemon.setChecked(false);
         }
     }
-
+    // TODO paska poistaa allLutemons listalta kaiken siirron jälkeen, pitää korjata
+    // Siirto toimii muuten
     public void moveLutemons(View view) {
         int selectedMove = rgMove.getCheckedRadioButtonId();
         List<Lutemon> selectedLutemons = new ArrayList<>();
