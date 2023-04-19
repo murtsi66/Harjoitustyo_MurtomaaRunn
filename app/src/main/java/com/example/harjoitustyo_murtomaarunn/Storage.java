@@ -1,21 +1,20 @@
 package com.example.harjoitustyo_murtomaarunn;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Storage implements Serializable {
     private static Storage instance = null;
     protected ArrayList<Lutemon> allLutemons;
     protected ArrayList<Lutemon> homeLutemons;
-    protected ArrayList<Lutemon> battlefieldLutemons;
     protected ArrayList<Lutemon> trainingLutemons;
+    protected ArrayList<Lutemon> battlefieldLutemons;
 
-    private Storage()   {
+    private Storage() {
         allLutemons = new ArrayList<>();
         homeLutemons = new ArrayList<>();
-        battlefieldLutemons = new ArrayList<>();
         trainingLutemons = new ArrayList<>();
+        battlefieldLutemons = new ArrayList<>();
         instance = this;
     }
 
@@ -28,8 +27,15 @@ public class Storage implements Serializable {
 
     // Methods to move Lutemons between places
 
-    public void addLutemon(Lutemon lutemon, String lutemonPlace)    {
-        switch (lutemonPlace)   {
+    public void moveLutemons(ArrayList<Lutemon> lutemonsToMove, String fromPlace, String destination) {
+        for (Lutemon lutemon : lutemonsToMove) {
+            removeLutemon(lutemon, fromPlace);
+            addLutemon(lutemon, destination);
+        }
+    }
+
+    public void addLutemon(Lutemon lutemon, String lutemonPlace) {
+        switch (lutemonPlace) {
             case "all":
                 allLutemons.add(lutemon);
                 break;
@@ -47,8 +53,8 @@ public class Storage implements Serializable {
         }
     }
 
-    public void removeLutemon(Lutemon lutemon, String lutemonPlace)    {
-        switch (lutemonPlace)   {
+    public void removeLutemon(Lutemon lutemon, String lutemonPlace) {
+        switch (lutemonPlace) {
             case "all":
                 allLutemons.remove(lutemon);
                 break;
@@ -67,8 +73,8 @@ public class Storage implements Serializable {
     }
 
     // Method to get list of Lutemons in each place
-    public ArrayList<Lutemon> getLutemons(String lutemonPlace)    {
-        switch (lutemonPlace)   {
+    public ArrayList<Lutemon> getLutemons(String lutemonPlace) {
+        switch (lutemonPlace) {
             case "all":
                 return allLutemons;
             case "home":
@@ -82,15 +88,15 @@ public class Storage implements Serializable {
         }
     }
 
-    public Lutemon getLutemonById(int id)   {
+    public Lutemon getLutemonById(int id) {
         return allLutemons.get(id);
     }
 
-    public void loadLutemons()  {
+    public void loadLutemons() {
         // TEE
     }
 
-    public void saveLutemons()  {
+    public void saveLutemons() {
         // TEE
     }
 }
