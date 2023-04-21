@@ -1,45 +1,38 @@
 package com.example.harjoitustyo_murtomaarunn;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.harjoitustyo_murtomaarunn.fragments.FragmentBattle;
+import com.example.harjoitustyo_murtomaarunn.fragments.FragmentHome;
+import com.example.harjoitustyo_murtomaarunn.fragments.FragmentTraining;
 
-public class LutemonMoveAdapter extends RecyclerView.Adapter<LutemonMoveViewHolder> {
+public class LutemonMoveAdapter extends FragmentStateAdapter {
 
-    private Context context;
-
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
-
-    public LutemonMoveAdapter(Context context, ArrayList<Lutemon> lutemons){
-        this.context = context;
-        this.lutemons = lutemons;
+    public LutemonMoveAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
     }
 
     @NonNull
     @Override
-    public LutemonMoveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new LutemonMoveViewHolder(LayoutInflater.from(context).inflate(R.layout.lutemon_move_view, parent,false)); // lutemon view varten tarvitaan xml file
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull LutemonMoveViewHolder holder, int position){
-        Lutemon lutemon = lutemons.get(position);
-        holder.checkboxName.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
-        holder.checkboxName.setChecked(lutemon.isChecked());
-        holder.checkboxName.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            lutemon.setChecked(isChecked);
-        });
+    public Fragment createFragment(int position) {
+        switch (position) {
+            case 0:
+                return new FragmentHome();
+            case 1:
+                return new FragmentTraining();
+            case 2:
+                return new FragmentBattle();
+            default:
+                return new FragmentHome();
+        }
     }
 
     @Override
     public int getItemCount() {
-        return lutemons.size();
+        return 3;
     }
 }
+

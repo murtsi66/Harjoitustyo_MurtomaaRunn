@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FragmentBattle">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MoveLutemonsActivity">
+
+        <RadioGroup
+            android:id="@+id/rgMoveLutemons"
+            android:layout_width="173dp"
+            android:layout_height="147dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvLutemonList">
+
+            <RadioButton
+                android:id="@+id/rbHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotiin"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbTrain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Treenaamaan"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbBattle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Taisteluareenalle"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLutemonList"
+            android:layout_width="317dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnMoveChosen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="moveLutemons"
+            android:text="Siirrä valitut Lutemonit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgMoveLutemons" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

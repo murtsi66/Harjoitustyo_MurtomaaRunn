@@ -23,6 +23,7 @@
         <activity android:name=".AddActivity" />
         <activity android:name=".ListLutemonsActivity" />
         <activity android:name=".MoveLutemonsActivity" />
+        <activity android:name=".MoveTabActivity" />
 
 
     </application>

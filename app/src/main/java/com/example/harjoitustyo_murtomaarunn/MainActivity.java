@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.io.Serializable;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToMoveLutemons(View view)   {
-        Intent intent = new Intent(this, MoveLutemonsActivity.class);
+        Intent intent = new Intent(this, MoveTabActivity.class);
         startActivity(intent);
     }
 
