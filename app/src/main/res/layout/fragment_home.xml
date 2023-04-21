@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rvLutemonList">
+            app:layout_constraintTop_toBottomOf="@+id/rvHomeLutemonList">
 
             <RadioButton
                 android:id="@+id/rbHome"
@@ -45,7 +45,7 @@
         </RadioGroup>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvLutemonList"
+            android:id="@+id/rvHomeLutemonList"
             android:layout_width="317dp"
             android:layout_height="220dp"
             android:layout_marginTop="100dp"

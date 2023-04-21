@@ -24,7 +24,7 @@ public class MoveLutemonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move_lutemons);
         storage = Storage.getInstance();
-        recyclerView = findViewById(R.id.rvLutemonList);
+        recyclerView = findViewById(R.id.rvFragmentLutemonList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         rgMove = findViewById(R.id.rgMoveLutemons);
         rbMove = new RadioButton[] {

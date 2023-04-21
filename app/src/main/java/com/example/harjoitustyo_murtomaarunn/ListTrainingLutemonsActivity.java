@@ -6,18 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ListLutemonsActivity extends AppCompatActivity {
+public class ListTrainingLutemonsActivity extends AppCompatActivity {
     private Storage storage;
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_lutemons);
+        setContentView(R.layout.fragment_training);
 
         storage = Storage.getInstance();
-        recyclerView = findViewById(R.id.rvFragmentLutemonList);
+        recyclerView = findViewById(R.id.rvTrainingLutemonList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), storage.getLutemons("all")));
+        recyclerView.setAdapter(new FragmentAdapter(getApplicationContext(), storage.getLutemons("home")));
     }
 }
+
