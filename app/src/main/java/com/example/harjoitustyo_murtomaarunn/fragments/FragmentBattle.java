@@ -23,8 +23,6 @@ import java.util.List;
 public class FragmentBattle extends Fragment {
 
     private Storage storage;
-    private RadioGroup rgMove;
-    private RadioButton[] rbMove;
     private RecyclerView recyclerView;
     private FragmentAdapter adapter;
 
@@ -39,12 +37,6 @@ public class FragmentBattle extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_battle, container, false);
         recyclerView = view.findViewById(R.id.rvBattleLutemonList);
-        rgMove = view.findViewById(R.id.rgMoveLutemons);
-        rbMove = new RadioButton[] {
-                view.findViewById(R.id.rbHome),
-                view.findViewById(R.id.rbTrain),
-                view.findViewById(R.id.rbBattle)
-        };
         recyclerView.setLayoutManager((new LinearLayoutManager(getActivity())));
         recyclerView.setAdapter(adapter);
         return view;

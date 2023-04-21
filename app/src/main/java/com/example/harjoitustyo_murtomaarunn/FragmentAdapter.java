@@ -29,11 +29,10 @@ public class FragmentAdapter extends RecyclerView.Adapter<LutemonMoveViewHolder>
     @Override
     public void onBindViewHolder(@NonNull LutemonMoveViewHolder holder, int position) {
         Lutemon lutemon = lutemons.get(position);
-        holder.checkboxName.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
 
         CheckBox checkBox = holder.checkboxName;
         if (checkBox != null) {
-            checkBox.setText(lutemon.getName());
+            checkBox.setText(lutemon.getName() + " (" + lutemon.getColor() + ")");
         }
     }
 
