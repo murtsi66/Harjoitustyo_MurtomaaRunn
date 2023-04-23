@@ -1,4 +1,4 @@
-package com.example.harjoitustyo_murtomaarunn;
+package com.example.harjoitustyo_murtomaarunn.fragments;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -9,9 +9,9 @@ import com.example.harjoitustyo_murtomaarunn.fragments.FragmentBattle;
 import com.example.harjoitustyo_murtomaarunn.fragments.FragmentHome;
 import com.example.harjoitustyo_murtomaarunn.fragments.FragmentTraining;
 
-public class LutemonMoveAdapter extends FragmentStateAdapter {
+public class TabPagerAdapter extends FragmentStateAdapter {
 
-    public LutemonMoveAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public TabPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 

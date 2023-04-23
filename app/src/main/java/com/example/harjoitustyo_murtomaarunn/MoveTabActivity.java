@@ -5,12 +5,11 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.harjoitustyo_murtomaarunn.fragments.TabPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-
 public class MoveTabActivity extends AppCompatActivity {
-    private LutemonMoveAdapter lutemonMoveAdapter;
+    private TabPagerAdapter lutemonMoveAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +18,14 @@ public class MoveTabActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabArea);
         ViewPager2 fragmentArea = findViewById(R.id.fragmentArea);
-        lutemonMoveAdapter = new LutemonMoveAdapter(this);
+        lutemonMoveAdapter = new TabPagerAdapter(this);
         fragmentArea.setAdapter(lutemonMoveAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                fragmentArea.setCurrentItem(tab.getPosition());
+                int position = tab.getPosition();
+                fragmentArea.setCurrentItem(position);
             }
 
             @Override
@@ -37,6 +37,7 @@ public class MoveTabActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
+
         });
 
         fragmentArea.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -46,6 +47,5 @@ public class MoveTabActivity extends AppCompatActivity {
                 tabLayout.getTabAt(position).select();
             }
         });
-
     }
 }

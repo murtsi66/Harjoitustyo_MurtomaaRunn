@@ -9,6 +9,7 @@ public class Storage implements Serializable {
     protected ArrayList<Lutemon> homeLutemons;
     protected ArrayList<Lutemon> trainingLutemons;
     protected ArrayList<Lutemon> battlefieldLutemons;
+    private FragmentAdapter adapter;
 
     private Storage() {
         allLutemons = new ArrayList<>();
@@ -26,13 +27,6 @@ public class Storage implements Serializable {
     }
 
     // Methods to move Lutemons between places
-
-    public void moveLutemons(ArrayList<Lutemon> lutemonsToMove, String fromPlace, String destination) {
-        for (Lutemon lutemon : lutemonsToMove) {
-            removeLutemon(lutemon, fromPlace);
-            addLutemon(lutemon, destination);
-        }
-    }
 
     public void addLutemon(Lutemon lutemon, String lutemonPlace) {
         switch (lutemonPlace) {

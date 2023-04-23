@@ -3,7 +3,7 @@ package com.example.harjoitustyo_murtomaarunn;
 import java.io.Serializable;
 
 public class Lutemon implements Serializable {
-    private boolean isChecked = false;
+    private boolean isChecked;
     private String name;
     private int id;
     private String color;
