@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
+    android:layout_height="150dp"
     android:layout_marginTop="10dp"
     android:background="#009688"
     android:orientation="horizontal">
@@ -17,7 +17,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="120dp"
+        android:layout_height="145dp"
         android:orientation="vertical">
 
         <TextView
@@ -42,10 +42,10 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtHealth"
+            android:id="@+id/txtTrainingDays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Elämä"
+            android:text="Treenipäivät"
             android:textSize="16sp" />
 
         <TextView
@@ -53,6 +53,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kokemus"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtWinsLosses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wins/Losses"
             android:textSize="16sp" />
 
     </LinearLayout>
