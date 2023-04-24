@@ -92,6 +92,12 @@ public class Lutemon implements Serializable {
 
         trainingDays++;
     }
+    public void damageControl(int damage) {
+        this.health = health - damage;
+        if(health < 0){
+            health = 0;
+        }
+    }
 
     public void printStats()    {
     }
@@ -110,6 +116,7 @@ public class Lutemon implements Serializable {
     }
 
     public int getHealth() {
+        health = maxHealth - health;
         return health;
     }
 

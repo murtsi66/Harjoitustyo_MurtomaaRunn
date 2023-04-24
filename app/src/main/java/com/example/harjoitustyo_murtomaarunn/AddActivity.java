@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -52,6 +53,7 @@ public class AddActivity extends AppCompatActivity {
         Storage storage = Storage.getInstance();
         storage.addLutemon(lutemon, "all");
         storage.addLutemon(lutemon, "home");
+        Toast.makeText(this, "Uusi lutemon lisätty!", Toast.LENGTH_SHORT).show();
         // TODO korjaa tallennus
         storage.saveLutemons();
     }
