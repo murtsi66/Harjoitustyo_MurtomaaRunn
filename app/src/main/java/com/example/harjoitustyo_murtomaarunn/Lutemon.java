@@ -85,9 +85,11 @@ public class Lutemon implements Serializable {
 
     public void increaseExp()  {
         experience++;
+        experience++;
     }
 
     public void increaseTrainingDays()  {
+
         trainingDays++;
     }
 

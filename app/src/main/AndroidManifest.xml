@@ -23,6 +23,8 @@
         <activity android:name=".AddActivity" />
         <activity android:name=".ListLutemonsActivity" />
         <activity android:name=".MoveTabActivity" />
+        <activity android:name=".Training" />
+        <activity android:name=".Battlefield" />
 
 
     </application>

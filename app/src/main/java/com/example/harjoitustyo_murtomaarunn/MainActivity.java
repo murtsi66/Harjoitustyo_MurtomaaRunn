@@ -35,4 +35,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Battlefield.class);
         startActivity(intent);
     }
+
+    public void switchToTraining(View view) {
+        Intent intent = new Intent(this, Training.class);
+        startActivity(intent);
+    }
 }

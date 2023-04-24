@@ -42,7 +42,7 @@ public class FragmentBattle extends Fragment {
         recyclerView.setLayoutManager((new LinearLayoutManager(getContext())));
         adapter = new FragmentAdapter(getContext(), storage.getLutemons("battlefield"));
         recyclerView.setAdapter(adapter);
-        btnAdd = view.findViewById(R.id.btnMoveChosen);
+        btnAdd = view.findViewById(R.id.btnTrainChosen);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/btnSwitchToAddView"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:onClick="switchToAddLutemon"
@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/btnListLutemons"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="switchToListLutemons"
@@ -30,7 +30,7 @@
 
     <Button
         android:id="@+id/btnSwitchToMoveLutemon"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="switchToMoveLutemons"
@@ -42,11 +42,23 @@
 
     <Button
         android:id="@+id/btnSwitchToBattlefield"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="switchToBattlefield"
         android:text="Taisteluareenalle!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSwitchToTraining" />
+
+    <Button
+        android:id="@+id/btnSwitchToTraining"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="switchToTraining"
+        android:text="Treenaa!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSwitchToMoveLutemon" />

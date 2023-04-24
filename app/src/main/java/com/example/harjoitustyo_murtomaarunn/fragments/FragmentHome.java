@@ -37,12 +37,12 @@ public class FragmentHome extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_battle, container, false);
-        recyclerView = view.findViewById(R.id.rvBattleLutemonList);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = view.findViewById(R.id.rvHomeLutemonList);
         recyclerView.setLayoutManager((new LinearLayoutManager(getContext())));
         adapter = new FragmentAdapter(getContext(), storage.getLutemons("home"));
         recyclerView.setAdapter(adapter);
-        btnAdd = view.findViewById(R.id.btnMoveChosen);
+        btnAdd = view.findViewById(R.id.btnTrainChosen);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
