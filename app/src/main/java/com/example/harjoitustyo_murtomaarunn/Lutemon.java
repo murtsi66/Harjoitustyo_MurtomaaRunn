@@ -35,30 +35,35 @@ public class Lutemon implements Serializable {
                 this.attack = 7;
                 this.defence = 2;
                 this.maxHealth = 18;
+                this.health = 18;
                 this.image = R.drawable.pink_lutemon;
                 break;
             case    "Black":
                 this.attack = 9;
                 this.defence = 0;
                 this.maxHealth = 16;
+                this.health = 16;
                 this.image = R.drawable.black_lutemon;
                 break;
             case    "White":
                 this.attack = 5;
                 this.defence = 4;
-                this.maxHealth = 20;
+                this.maxHealth = 25;
+                this.health = 25;
                 this.image = R.drawable.white_lutemon;
                 break;
             case    "Green":
                 this.attack = 6;
                 this.defence = 3;
                 this.maxHealth = 19;
+                this.health = 19;
                 this.image = R.drawable.green_lutemon;
                 break;
             case    "Orange":
                 this.attack = 8;
                 this.defence = 1;
                 this.maxHealth = 17;
+                this.health = 17;
                 this.image = R.drawable.orange_lutemon;
                 break;
             default:
@@ -93,7 +98,7 @@ public class Lutemon implements Serializable {
         trainingDays++;
     }
     public void damageControl(int damage) {
-        this.health = health - damage;
+        this.health = this.health - damage;
         if(health < 0){
             health = 0;
         }
@@ -116,7 +121,6 @@ public class Lutemon implements Serializable {
     }
 
     public int getHealth() {
-        health = maxHealth - health;
         return health;
     }
 

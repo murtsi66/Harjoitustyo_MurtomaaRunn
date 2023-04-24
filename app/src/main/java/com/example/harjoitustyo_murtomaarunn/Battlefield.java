@@ -64,7 +64,7 @@ public class Battlefield extends AppCompatActivity {
             boolean battleOver = false;
             while (!battleOver) {
                 // Attacker attacks defender
-                int damage = attacker.attack() - defender.defence() + (int)(Math.random() * 3);
+                int damage = attacker.attack() - defender.defence() + (int)(Math.random() * 5);
                 if (damage > 0) {
                     defender.damageControl(damage);
                     txtOctagon.append(String.format("%s hyökkää kohti %s:tä\n", attacker.getName(), defender.getName()));
