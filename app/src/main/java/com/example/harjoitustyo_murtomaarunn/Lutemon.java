@@ -17,7 +17,7 @@ public class Lutemon implements Serializable {
     private int attack;
     private int defence;
     private static int idCounter = 0;
-    private Storage storage;
+    Storage storage;
 
     // Constructor to create a Lutemon object
     public Lutemon(String name, String color)   {
@@ -104,9 +104,6 @@ public class Lutemon implements Serializable {
         }
     }
 
-    public void printStats()    {
-    }
-
     // Getters and setters for Lutemon attributes
     public String getName() {
         return name;
@@ -154,10 +151,6 @@ public class Lutemon implements Serializable {
 
     public int getDefence() {
         return defence;
-    }
-
-    public static int getNumberOfCreatedLutemons()  {
-        return idCounter;
     }
 
     public void setMaxHealth()  {

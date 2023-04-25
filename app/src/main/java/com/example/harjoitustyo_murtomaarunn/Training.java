@@ -41,7 +41,7 @@ public class Training extends AppCompatActivity {
         });
     }
 
-
+    // Method for training lutemons
     public void trainLutemons() {
         List<Lutemon> selectedLutemons = new ArrayList<>();
         for (Lutemon lutemon : storage.getLutemons("training")) {
@@ -58,8 +58,5 @@ public class Training extends AppCompatActivity {
             lutemon.setChecked(false);
         }
         Toast.makeText(this, "Lutemonien Beast Mode aktivoitu!", Toast.LENGTH_LONG).show();
-        System.out.println("painettu");
-        // TODO lisää tallennuss
-        storage.saveLutemons();
     }
 }

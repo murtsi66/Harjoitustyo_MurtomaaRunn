@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // Methods for switching the view in game
+
     public void switchToAddLutemon(View view)   {
         Intent intent = new Intent(this, AddActivity.class);
         startActivity(intent);

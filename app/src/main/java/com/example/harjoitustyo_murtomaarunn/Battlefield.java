@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class Battlefield extends AppCompatActivity {
-    private Context context;
     private Storage storage;
     private RecyclerView recyclerView;
     private FragmentAdapter adapter;
@@ -22,7 +21,7 @@ public class Battlefield extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battlefield);
 
@@ -42,7 +41,7 @@ public class Battlefield extends AppCompatActivity {
         });
     }
 
-
+    // Loop for fighting lutemons
     public void fight() {
         List<Lutemon> fighterLutemons = storage.getLutemons("battlefield");
         for (int i = 0; i < fighterLutemons.size(); i++) {
@@ -64,55 +63,54 @@ public class Battlefield extends AppCompatActivity {
             boolean battleOver = false;
             while (!battleOver) {
                 // Attacker attacks defender
-                int damage = attacker.attack() - defender.defence() + (int)(Math.random() * 5);
+                int damage = attacker.attack() - defender.defence() + (int) (Math.random() * 5);
                 if (damage > 0) {
                     defender.damageControl(damage);
-                    txtOctagon.append(String.format("%s hyökkää kohti %s:tä\n", attacker.getName(), defender.getName()));
+                    txtOctagon.append(String.format("%s hyökkää taistelijaan %s\n", attacker.getName(), defender.getName()));
                     txtOctagon.append(String.format("%s: Elämät:%d/%d\n", attacker.getName(), attacker.getHealth(), attacker.getMaxHealth()));
                     txtOctagon.append(String.format("%s: Elämät:%d/%d\n", defender.getName(), defender.getHealth(), defender.getMaxHealth()));
                     adapter.notifyDataSetChanged();
                     if (defender.getHealth() == 0) {
-                        txtOctagon.append(String.format("%s hävisi taistelun.\nTaistelu on ohi.", defender.getName()));
+                        txtOctagon.append(String.format("%s voitti taistelun.\nTaistelu on ohi.", attacker.getName()));
                         attacker.increaseWins();
                         defender.increaseLosses();
                         attacker.increaseExp();
+                        // Loser gets sent back to home
+                        storage.removeLutemon(defender, "battlefield");
+                        storage.addLutemon(defender, "home");
                         battleOver = true;
                         adapter.notifyDataSetChanged();
                         break;
                     }
                 } else {
-                    txtOctagon.append(String.format("%s hyökkää kohti %s:tä\n", attacker.getName(), defender.getName()));
+                    txtOctagon.append(String.format("%s hyökkää taistelijaan %s\n", attacker.getName(), defender.getName()));
                 }
                 // Defender attacks attacker
-                damage = defender.attack() - attacker.defence() + (int)(Math.random() * 3);
+                damage = defender.attack() - attacker.defence() + (int) (Math.random() * 3);
                 if (damage > 0) {
                     attacker.damageControl(damage);
-                    txtOctagon.append(String.format("%s hyökkää kohti %s:tä\n", defender.getName(), attacker.getName()));
+                    txtOctagon.append(String.format("%s hyökkää taistelijaan %s\n", defender.getName(), attacker.getName()));
                     txtOctagon.append(String.format("%s: Elämät:%d/%d\n", attacker.getName(), attacker.getHealth(), attacker.getMaxHealth()));
                     txtOctagon.append(String.format("%s: Elämät:%d/%d\n", defender.getName(), defender.getHealth(), defender.getMaxHealth()));
                     adapter.notifyDataSetChanged();
                     if (attacker.getHealth() == 0) {
-                        txtOctagon.append(String.format("%s hävisi taistelun.\nTaistelu on ohi.", attacker.getName()));
+                        txtOctagon.append(String.format("%s voitti taistelun.\nTaistelu on ohi.", defender.getName()));
                         defender.increaseWins();
                         attacker.increaseLosses();
                         defender.increaseExp();
+                        // Loser gets sent back home
+                        storage.removeLutemon(attacker, "battlefield");
+                        storage.addLutemon(attacker, "home");
                         battleOver = true;
                         adapter.notifyDataSetChanged();
                         break;
                     }
                 } else {
-                    txtOctagon.append(String.format("%s hyökkää kohti %s:tä\n", defender.getName(), attacker.getName()));
+                    txtOctagon.append(String.format("%s hyökkää taistelijaan %s\n", defender.getName(), attacker.getName()));
                 }
             }
             txtFight.setText(txtOctagon.toString());
         }
         adapter.notifyDataSetChanged();
-        /*for (Lutemon lutemon : storage.getLutemons("battle")) {
-            lutemon.setChecked(false);
-        }*/
     }
 }
-        // TODO lisää tallennuss
-       /* storage.saveLutemons();
-    }
-}*/

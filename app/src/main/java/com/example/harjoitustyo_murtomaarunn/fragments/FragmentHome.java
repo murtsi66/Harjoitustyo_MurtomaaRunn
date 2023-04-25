@@ -89,8 +89,5 @@ public class FragmentHome extends Fragment {
         for (Lutemon lutemon : selectedLutemons) {
             lutemon.setChecked(false);
         }
-
-        // TODO lisää tallennuss
-        storage.saveLutemons();
     }
 }

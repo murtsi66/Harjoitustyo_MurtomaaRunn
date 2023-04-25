@@ -29,7 +29,7 @@ public class AddActivity extends AppCompatActivity {
         rbBlack = findViewById(R.id.rbBlack);
         txtLutemonName = findViewById(R.id.txtEditName);
     }
-
+    // Method for adding new lutemons, new lutemon is added straight to home when created
     public void AddLutemon(View view)   {
         switch (rgSelectColor.getCheckedRadioButtonId())    {
             case R.id.rbGreen:
@@ -51,10 +51,7 @@ public class AddActivity extends AppCompatActivity {
         name = txtLutemonName.getText().toString();
         Lutemon lutemon = new Lutemon(name, color);
         Storage storage = Storage.getInstance();
-        storage.addLutemon(lutemon, "all");
         storage.addLutemon(lutemon, "home");
         Toast.makeText(this, "Uusi lutemon lisätty!", Toast.LENGTH_SHORT).show();
-        // TODO korjaa tallennus
-        storage.saveLutemons();
     }
 }

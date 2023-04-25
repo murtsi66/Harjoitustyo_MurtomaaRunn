@@ -90,7 +90,5 @@ public class FragmentTraining extends Fragment {
             lutemon.setChecked(false);
         }
 
-        // TODO lisää tallennuss
-        storage.saveLutemons();
     }
 }

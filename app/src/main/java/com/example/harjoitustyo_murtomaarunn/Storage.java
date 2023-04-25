@@ -3,16 +3,15 @@ package com.example.harjoitustyo_murtomaarunn;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+// Three arraylists for storing Lutemon. Each Lutemon can be only in one list at a time.
+
 public class Storage implements Serializable {
     private static Storage instance = null;
-    protected ArrayList<Lutemon> allLutemons;
     protected ArrayList<Lutemon> homeLutemons;
     protected ArrayList<Lutemon> trainingLutemons;
     protected ArrayList<Lutemon> battlefieldLutemons;
-    private FragmentAdapter adapter;
 
-    private Storage() {
-        allLutemons = new ArrayList<>();
+    protected Storage() {
         homeLutemons = new ArrayList<>();
         trainingLutemons = new ArrayList<>();
         battlefieldLutemons = new ArrayList<>();
@@ -30,11 +29,9 @@ public class Storage implements Serializable {
 
     public void addLutemon(Lutemon lutemon, String lutemonPlace) {
         switch (lutemonPlace) {
-            case "all":
-                allLutemons.add(lutemon);
-                break;
             case "home":
                 homeLutemons.add(lutemon);
+                lutemon.setMaxHealth();
                 break;
             case "training":
                 trainingLutemons.add(lutemon);
@@ -49,9 +46,6 @@ public class Storage implements Serializable {
 
     public void removeLutemon(Lutemon lutemon, String lutemonPlace) {
         switch (lutemonPlace) {
-            case "all":
-                allLutemons.remove(lutemon);
-                break;
             case "home":
                 homeLutemons.remove(lutemon);
                 break;
@@ -69,8 +63,6 @@ public class Storage implements Serializable {
     // Method to get list of Lutemons in each place
     public ArrayList<Lutemon> getLutemons(String lutemonPlace) {
         switch (lutemonPlace) {
-            case "all":
-                return allLutemons;
             case "home":
                 return homeLutemons;
             case "training":
@@ -80,17 +72,5 @@ public class Storage implements Serializable {
             default:
                 return null;
         }
-    }
-
-    public Lutemon getLutemonById(int id) {
-        return allLutemons.get(id);
-    }
-
-    public void loadLutemons() {
-        // TEE
-    }
-
-    public void saveLutemons() {
-        // TEE
     }
 }
