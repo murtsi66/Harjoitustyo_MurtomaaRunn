@@ -35,7 +35,6 @@ public class Battlefield extends AppCompatActivity {
         btnFight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 fight();
             }
         });
