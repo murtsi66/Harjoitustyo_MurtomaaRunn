@@ -84,8 +84,8 @@ public class Battlefield extends AppCompatActivity {
                         attackingLutemon.increaseWins();
                         defendingLutemon.increaseLosses();
                         defendingLutemon.increaseExp();
-                        storage.removeLutemon(defendingLutemon, "Battlefield");
-                        storage.addLutemon(defendingLutemon, "Home");
+                        storage.removeLutemon(defendingLutemon, "battlefield");
+                        storage.addLutemon(defendingLutemon, "home");
                         endOfBattle = true;
                         adapter.notifyDataSetChanged();
                         break;
@@ -109,8 +109,8 @@ public class Battlefield extends AppCompatActivity {
                         defendingLutemon.increaseWins();
                         attackingLutemon.increaseLosses();
                         defendingLutemon.increaseExp();
-                        storage.removeLutemon(attackingLutemon, "Battlefield");
-                        storage.addLutemon(attackingLutemon, "Home");
+                        storage.removeLutemon(attackingLutemon, "battlefield");
+                        storage.addLutemon(attackingLutemon, "home");
                         endOfBattle = true;
                         adapter.notifyDataSetChanged();
                         break;
