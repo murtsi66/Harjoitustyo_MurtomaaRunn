@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class Battlefield extends AppCompatActivity {
-    private Context context;
     private Storage storage;
     private RecyclerView recyclerView;
     private FragmentAdapter adapter;
@@ -80,11 +79,13 @@ public class Battlefield extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
 
                     if (defendingLutemon.getHealth() == 0) {
-                        txtOctagon.append(String.format("%s hävisi taistelun.\n", defendingLutemon.getName()));
+                        txtOctagon.append(String.format("%s voitti taistelun.\n", attackingLutemon.getName()));
                         txtOctagon.append(String.format("Taistelu on ohi."));
                         attackingLutemon.increaseWins();
                         defendingLutemon.increaseLosses();
                         defendingLutemon.increaseExp();
+                        storage.removeLutemon(defendingLutemon, "battlefield");
+                        storage.addLutemon(defendingLutemon, "home");
                         endOfBattle = true;
                         adapter.notifyDataSetChanged();
                         break;
@@ -103,11 +104,13 @@ public class Battlefield extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
 
                     if (attackingLutemon.getHealth() == 0) {
-                        txtOctagon.append(String.format("%s hävisi taistelun.\n", attackingLutemon.getName()));
+                        txtOctagon.append(String.format("%s voitti taistelun.\n", defendingLutemon.getName()));
                         txtOctagon.append(String.format("Taistelu on ohi."));
                         defendingLutemon.increaseWins();
                         attackingLutemon.increaseLosses();
                         defendingLutemon.increaseExp();
+                        storage.removeLutemon(attackingLutemon, "battlefield");
+                        storage.addLutemon(attackingLutemon, "home");
                         endOfBattle = true;
                         adapter.notifyDataSetChanged();
                         break;
