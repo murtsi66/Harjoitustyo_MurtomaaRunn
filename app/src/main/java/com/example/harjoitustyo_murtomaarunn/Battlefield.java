@@ -97,7 +97,7 @@ public class Battlefield extends AppCompatActivity {
 
                 if (damage > 0) {
                     attackingLutemon.damageControl(damage);
-                    txtOctagon.append(String.format("%s hyökkää, kohteenaan %s\n", defendingLutemon.getName(), defendingLutemon.getName()));
+                    txtOctagon.append(String.format("%s hyökkää, kohteenaan %s\n", defendingLutemon.getName(), attackingLutemon.getName()));
                     txtOctagon.append(String.format("%s: Elämät:%d/%d\n", attackingLutemon.getName(), attackingLutemon.getHealth(), attackingLutemon.getMaxHealth()));
                     txtOctagon.append(String.format("%s: Elämät:%d/%d\n", defendingLutemon.getName(), defendingLutemon.getHealth(), defendingLutemon.getMaxHealth()));
                     adapter.notifyDataSetChanged();
