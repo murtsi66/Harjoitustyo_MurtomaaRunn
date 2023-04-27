@@ -10,6 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.harjoitustyo_murtomaarunn.Lutemons.Black;
+import com.example.harjoitustyo_murtomaarunn.Lutemons.Green;
+import com.example.harjoitustyo_murtomaarunn.Lutemons.Orange;
+import com.example.harjoitustyo_murtomaarunn.Lutemons.Pink;
+import com.example.harjoitustyo_murtomaarunn.Lutemons.White;
+
 public class AddActivity extends AppCompatActivity {
     private Context context;
     private RadioGroup rgSelectColor;
@@ -31,27 +37,29 @@ public class AddActivity extends AppCompatActivity {
     }
     // Method for adding new lutemons, new lutemon is added straight to home when created
     public void AddLutemon(View view)   {
+        name = txtLutemonName.getText().toString();
         switch (rgSelectColor.getCheckedRadioButtonId())    {
             case R.id.rbGreen:
-                color = "Green";
+                Green green = new Green(name, "Green");
+                Storage.getInstance().addLutemon(green, "home");
                 break;
             case R.id.rbOrange:
-                color = "Orange";
+                Orange orange = new Orange(name, "Orange");
+                Storage.getInstance().addLutemon(orange, "home");
                 break;
             case R.id.rbWhite:
-                color = "White";
+                White white = new White(name, "White");
+                Storage.getInstance().addLutemon(white, "home");
                 break;
             case R.id.rbBlack:
-                color = "Black";
+                Black black = new Black(name, "Black");
+                Storage.getInstance().addLutemon(black, "home");
                 break;
             case R.id.rbPink:
-                color = "Pink";
+                Pink pink = new Pink(name, "Pink");
+                Storage.getInstance().addLutemon(pink, "home");
                 break;
         }
-        name = txtLutemonName.getText().toString();
-        Lutemon lutemon = new Lutemon(name, color);
-        Storage storage = Storage.getInstance();
-        storage.addLutemon(lutemon, "home");
         Toast.makeText(this, "Uusi lutemon lisätty!", Toast.LENGTH_SHORT).show();
     }
 }

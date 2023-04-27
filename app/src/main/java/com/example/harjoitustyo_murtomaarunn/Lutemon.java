@@ -4,72 +4,35 @@ import java.io.Serializable;
 
 public class Lutemon implements Serializable {
     private boolean isChecked;
-    private String name;
-    private int id;
-    private String color;
-    private int health;
-    private int maxHealth;
-    private int experience;
-    private int image;
-    private int wins;
-    private int losses;
-    private int trainingDays;
-    private int attack;
-    private int defence;
-    private static int idCounter = 0;
+    protected String name;
+    protected int id;
+    protected String color;
+    protected int health;
+    protected int maxHealth;
+    protected int experience;
+    protected int image;
+    protected int wins;
+    protected int losses;
+    protected int trainingDays;
+    protected int attack;
+    protected int defence;
+    protected static int idCounter = 0;
     Storage storage;
 
     // Constructor to create a Lutemon object
-    public Lutemon(String name, String color)   {
+    public Lutemon(String name, String color, int attack, int defence, int experience, int health, int maxHealth, int trainingDays, int image)   {
         this.name = name;
         this.color = color;
-        this.experience = 0;
-        this.trainingDays = 0;
+        this.attack = attack;
+        this.defence = defence;
+        this.maxHealth = maxHealth;
+        this.health = health;
+        this.experience = experience;
+        this.trainingDays = trainingDays;
         this.wins = 0;
         this.losses = 0;
-        this.id = idCounter++;
+        this.image = image;
         storage = Storage.getInstance();
-
-        switch (color)  {
-            case    "Pink":
-                this.attack = 7;
-                this.defence = 2;
-                this.maxHealth = 18;
-                this.health = 18;
-                this.image = R.drawable.pink_lutemon;
-                break;
-            case    "Black":
-                this.attack = 9;
-                this.defence = 0;
-                this.maxHealth = 16;
-                this.health = 16;
-                this.image = R.drawable.black_lutemon;
-                break;
-            case    "White":
-                this.attack = 5;
-                this.defence = 4;
-                this.maxHealth = 25;
-                this.health = 25;
-                this.image = R.drawable.white_lutemon;
-                break;
-            case    "Green":
-                this.attack = 6;
-                this.defence = 3;
-                this.maxHealth = 19;
-                this.health = 19;
-                this.image = R.drawable.green_lutemon;
-                break;
-            case    "Orange":
-                this.attack = 8;
-                this.defence = 1;
-                this.maxHealth = 17;
-                this.health = 17;
-                this.image = R.drawable.orange_lutemon;
-                break;
-            default:
-                System.out.println("Invalid color");
-                break;
-        }
     }
 
     public int attack() {
